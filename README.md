@@ -24,3 +24,20 @@ Pull up the new site by going to:
 
     http://localhost:8000
 
+Alternative Setup
+------------
+
+When you want the errors to be shown when running the app, you could do
+the following
+
+- insert a `php.ini` file into the root of the project and put the following
+  contents into it:
+```neon
+display_errors = On
+html_errors = On
+error_prepend_string = "<pre style='white-space: pre-line'>"
+error_append_string = "</pre>"
+```
+- to run with this preffered settings, run
+  `php -S localhost:8000 -c php.ini` from the root of the project
+
