@@ -19,6 +19,28 @@ class Ship
     {
         return $this->name;
     }
+
+    public function getNameAndSpec($useShortFormat)
+    {
+        if ($useShortFormat) {
+            return sprintf(
+                '%s: %s/%s/%s',
+                $this->name,
+                $this->weaponPower,
+                $this->jediFactor,
+                $this->strength
+            );
+        } else {
+            return sprintf(
+                '%s: w:%s j:%s s:%s',
+                $this->name,
+                $this->weaponPower,
+                $this->jediFactor,
+                $this->strength
+            );
+        }
+
+    }
 }
 
 $myShip = new Ship();
@@ -31,4 +53,6 @@ $myShip->sayHello();
 echo '<hr/>';
 echo $myShip->getName();
 echo '<hr/>';
-var_dump($myShip->weaponPower);
+echo $myShip->getNameAndSpec(false);
+echo '<hr/>';
+echo $myShip->getNameAndSpec(true);
