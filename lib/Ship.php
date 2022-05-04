@@ -2,13 +2,13 @@
 
 class Ship
 {
-    public $name;
+    private $name;
 
-    public $weaponPower = 0;
+    private $weaponPower = 0;
 
-    public $jediFactor = 0;
+    private $jediFactor = 0;
 
-    public $strength = 0;
+    private $strength = 0;
 
     public function sayHello()
     {
@@ -45,4 +45,59 @@ class Ship
     {
         return $givenShip->strength > $this->strength;
     }
+
+    public function setStrength($strength)
+    {
+        if (!is_numeric($strength)){
+            throw new Exception('Invalid argument strength: '.$strength);
+        }
+        $this->strength = $strength;
+    }
+
+    public function getStrength()
+    {
+        return $this->strength;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWeaponPower(): int
+    {
+        return $this->weaponPower;
+    }
+
+    /**
+     * @param int $weaponPower
+     */
+    public function setWeaponPower(int $weaponPower): void
+    {
+        $this->weaponPower = $weaponPower;
+    }
+
+    /**
+     * @return int
+     */
+    public function getJediFactor(): int
+    {
+        return $this->jediFactor;
+    }
+
+    /**
+     * @param int $jediFactor
+     */
+    public function setJediFactor(int $jediFactor): void
+    {
+        $this->jediFactor = $jediFactor;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name): void
+    {
+        $this->name = $name;
+    }
+
+
 }
