@@ -80,7 +80,7 @@ $outcome = battle($ship1, $ship1Quantity, $ship2, $ship2Quantity);
                         <?php if ($outcome['used_jedi_powers']): ?>
                             used its Jedi Powers for a stunning victory!
                         <?php else: ?>
-                            overpowered and destroyed the <?php echo $outcome['losing_ship']['name'] ?>s
+                            overpowered and destroyed the <?php echo $outcome['losing_ship']->getName() ?>s
                         <?php endif; ?>
                     <?php endif; ?>
                 </p>
